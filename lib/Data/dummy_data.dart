@@ -8,7 +8,7 @@ var availableCategories = [
     title: 'Italian',
     color: Colors.purple,
   ),
-  Category(
+ const Category(
     id: 'c2',
     title: 'Quick & Easy',
     color: Colors.red,
