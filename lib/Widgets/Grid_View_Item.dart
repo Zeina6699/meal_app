@@ -13,7 +13,7 @@ body: Padding(
   child: InkWell(
     splashColor: Theme.of(context).primaryColor,
     onTap: (){
-
+    Navigator.pushNamed(context, '/meal');
     },
     child: Container(
       padding:const EdgeInsets.all(8),

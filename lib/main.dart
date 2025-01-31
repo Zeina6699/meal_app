@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/Screens/Categories_Screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:meal_app/Screens/Meal_Screen.dart';
 
 void main() {
   runApp(const MealApp());
@@ -22,6 +23,7 @@ class MealApp extends StatelessWidget {
           brightness: Brightness.dark
 )),
 routes: {
-  '/category':(context)=>CategoriesScreen()
+  '/category':(context)=>CategoriesScreen(),
+  '/meal':(context)=>MealScreen()
 },
      initialRoute:'/category');}}
