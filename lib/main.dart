@@ -24,6 +24,6 @@ class MealApp extends StatelessWidget {
 )),
 routes: {
   '/category':(context)=>CategoriesScreen(),
-  '/meal':(context)=>MealScreen()
+  '/meal':(context)=>MealScreen(title: '',meals: [],)
 },
      initialRoute:'/category');}}
