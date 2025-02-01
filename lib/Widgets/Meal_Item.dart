@@ -4,9 +4,11 @@ import 'package:meal_app/Widgets/Custom_Text.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem({super.key, required this.meal});
+  const MealItem({super.key, required this.meal, required this.selectMeal});
 
 final Meal meal;
+   final void Function(Meal meal) selectMeal;
+
 
 String? get complexityText{
   switch(meal.complexity){
@@ -34,7 +36,7 @@ String? get affordabilityText{
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         //  clipBehavior: Clip.hardEdge,
           elevation: 2,
-        child: InkWell(onTap: (){},
+        child: InkWell(onTap:()=> selectMeal(meal),
           child: Expanded(
             child: Column(
               children: [
@@ -63,6 +65,7 @@ String? get affordabilityText{
                               overflow: TextOverflow.ellipsis,
                               softWrap: true,
                               text: meal.title,fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white,textAlign:TextAlign.center,maxLines: 2,),
+                            
                              SizedBox(height: 12,),
                              Row()
                            ],

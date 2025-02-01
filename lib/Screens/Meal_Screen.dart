@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/Model/Category.dart';
 import 'package:meal_app/Model/Meal.dart';
+import 'package:meal_app/Screens/Meal_Details_Screen.dart';
 import 'package:meal_app/Widgets/Custom_Text.dart';
 import 'package:meal_app/Widgets/Meal_Item.dart';
 
@@ -28,7 +29,17 @@ class MealScreen extends StatelessWidget {
      SingleChildScrollView(
         child: Column(
           children:
-            meals.map((e)=>MealItem(meal: e)).toList()
+            meals.map((e)=>MealItem(
+              selectMeal: (meal){Navigator.of(context).push(
+                MaterialPageRoute(builder: (context){
+                  return MealDetailsScreen(meal: meal,onTuggleFavorite: (meal) {
+                    
+                  },);
+
+
+                })
+              );}, 
+              meal: e)).toList()
         ),
       ),
     );
