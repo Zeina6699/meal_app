@@ -57,7 +57,7 @@ String? get affordabilityText{
                       right: 0,
                        child: Container(
                         width: 220,
-                        padding: EdgeInsets.symmetric(vertical: 6),
+                        padding: const EdgeInsets.symmetric(vertical: 6),
                         color: Colors.black54,
                          child: Column(
                            children: [
@@ -66,8 +66,8 @@ String? get affordabilityText{
                               softWrap: true,
                               text: meal.title,fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white,textAlign:TextAlign.center,maxLines: 2,),
                             
-                             SizedBox(height: 12,),
-                             Row()
+                             const SizedBox(height: 12,),
+                             const Row()
                            ],
                          ),
                        ),
@@ -89,7 +89,7 @@ String? get affordabilityText{
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Row( children: [const Icon(Icons.schedule,color: Colors.black,),SizedBox(width: 6), CustomText(text: '${meal.duration} min',color: Colors.black,)],),
+                  Row( children: [const Icon(Icons.schedule,color: Colors.black,),const SizedBox(width: 6), CustomText(text: '${meal.duration} min',color: Colors.black,)],),
                   Row(children: [const Icon(Icons.work,color: Colors.black,),const SizedBox(width: 6), CustomText(text: '$complexityText'),
                   const SizedBox(width: 30,),
                   Row(children:  [const Icon(Icons.attach_money ,color: Colors.black,),CustomText(text: '$affordabilityText')]

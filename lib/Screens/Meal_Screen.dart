@@ -6,9 +6,9 @@ import 'package:meal_app/Widgets/Custom_Text.dart';
 import 'package:meal_app/Widgets/Meal_Item.dart';
 
 class MealScreen extends StatelessWidget {
-  MealScreen({super.key, required this.title, required this.meals});
+  const MealScreen({super.key, @required this.title, required this.meals});
 
-  final String title;
+  final String? title;
   final List<Meal> meals;
 
   @override
@@ -17,7 +17,7 @@ class MealScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
          backgroundColor: const Color.fromARGB(255, 30, 70, 32),
-        title:Text(title)
+        title:Text(title??'')
       ),
       body:
   /*     ListView.builder(

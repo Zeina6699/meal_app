@@ -8,12 +8,7 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 30, 70, 32),
-        title: CustomText(text: 'Pick your Category :',fontSize: 20,),
-      ),
-      body: Padding(
+    return  Padding(
         padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 5),
         child: GridView.builder(
           itemCount: availableCategories.length,
@@ -27,5 +22,5 @@ class CategoriesScreen extends StatelessWidget {
            childAspectRatio: 3/2,
            
            )),
-      ));}}
+      );}}
           
