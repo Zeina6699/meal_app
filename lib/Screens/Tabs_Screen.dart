@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/Model/Meal.dart';
 import 'package:meal_app/Screens/Categories_Screen.dart';
+import 'package:meal_app/Screens/FilterScreen.dart';
 import 'package:meal_app/Screens/Meal_Screen.dart';
 import 'package:meal_app/Widgets/Custom_Drawer.dart';
 import 'package:meal_app/Widgets/Custom_Text.dart';
@@ -22,6 +23,10 @@ class _TabsScreenState extends State<TabsScreen> {
     ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text(message)));
   }
+   void setScreen(String identifier){
+    if(identifier=='Filters'){Navigator.of(context).pop(); Navigator.of(context).push(MaterialPageRoute(builder: (context){return Filterscreen();}));}
+    else{Navigator.of(context).pop();}
+   }
 
    void toggleMealFavoriteStatus(Meal meal){
     final isExsiting=FavoriteMeal.contains(meal);
@@ -36,11 +41,11 @@ class _TabsScreenState extends State<TabsScreen> {
     var activePageTitle = ' Pick your Category :';
 
     if (_selectedPageIndex == 1) {
-      activePage =  MealScreen( meals:FavoriteMeal,onToggleFavorite:toggleMealFavoriteStatus,title: activePageTitle,);
+      activePage =  MealScreen( meals:FavoriteMeal,onToggleFavorite:toggleMealFavoriteStatus);
       activePageTitle = 'Favorites';
     }
     return Scaffold(
-      drawer:CustomDrawer(),
+      drawer:CustomDrawer(onSelectScreen: setScreen,),
       appBar:AppBar(
        
         backgroundColor: const Color.fromARGB(255, 30, 70, 32),

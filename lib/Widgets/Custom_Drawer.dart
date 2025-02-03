@@ -3,7 +3,9 @@ import 'package:meal_app/Widgets/Custom_List_Tile.dart';
 import 'package:meal_app/Widgets/Custom_Text.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key});
+  const CustomDrawer({super.key, required this.onSelectScreen});
+
+  final void Function(String identifier) onSelectScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +25,8 @@ class CustomDrawer extends StatelessWidget {
               CustomText(text: 'Cooking up ...',fontSize:25,color:Theme.of(context).colorScheme.primary)
             ],
             )),
-            CustomListTile(text:'Meals ',icon: Icons.restaurant,),
-            CustomListTile(text: 'Filters',icon: Icons.settings,)
+            CustomListTile(text:'Meals ',icon: Icons.restaurant,onTap:(){onSelectScreen('Meals');} ,),
+            CustomListTile(text: 'Filters',icon: Icons.settings,onTap:(){onSelectScreen('Filters');})
 
         ],
       ),
