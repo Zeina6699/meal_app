@@ -4,7 +4,7 @@ import 'package:meal_app/Screens/Categories_Screen.dart';
 import 'package:meal_app/Screens/Meal_Screen.dart';
 
 class ShowBottomNavigationBar extends StatelessWidget {
-  ShowBottomNavigationBar({
+  const ShowBottomNavigationBar({
 
     super.key, required this.icon1, required this.label1,
     this.icon2,this.icon3,this.icon4,this.label2,this.label3,this.label4,required this.onSelectPage,

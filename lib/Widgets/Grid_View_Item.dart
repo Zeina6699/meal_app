@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/Data/dummy_data.dart';
 import 'package:meal_app/Model/Category.dart';
+import 'package:meal_app/Model/Meal.dart';
 import 'package:meal_app/Screens/Meal_Screen.dart';
 
 class GridViewItem extends StatelessWidget {
-  const GridViewItem({super.key, required this.category});
+ GridViewItem({super.key, required this.category,required this.onToggleFavorite});
   final Category category;
+    void Function(Meal meal)onToggleFavorite;
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ body: Padding(
     final filteredMeal = dummyMeals.where((meal)=>meal.categories.contains(category.id)).toList();
     Navigator.of(context).push(
       MaterialPageRoute(builder: (context){
-        return MealScreen(title: category.title, meals: filteredMeal);
+        return MealScreen(title: category.title, meals: filteredMeal,onToggleFavorite:onToggleFavorite ,);
       })
     );
     },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/Screens/Categories_Screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:meal_app/Screens/Meal_Details_Screen.dart';
 import 'package:meal_app/Screens/Meal_Screen.dart';
 import 'package:meal_app/Screens/Tabs_Screen.dart';
 
@@ -23,9 +24,12 @@ class MealApp extends StatelessWidget {
           seedColor: Colors.purple,
           brightness: Brightness.dark
 )),
-routes: {
-  '/category':(context)=>const CategoriesScreen(),
-  '/meal':(context)=>MealScreen(title: '',meals: const [],),
-  '/tab':(context)=>TabsScreen()
-},
-     initialRoute:'/tab');}}
+//routes: {
+ // '/category':(context)=>CategoriesScreen(),
+ // '/meal':(context)=>MealScreen(title: '',meals: [],onToggleFavorite: (){},),
+  //'/detail':(context)=>const MealDetailsScreen(meal:meal, onTuggleFavorite:),
+ // '/tab':(context)=>const TabsScreen()
+//},
+    // initialRoute:'/tab'
+    home: TabsScreen(),
+     );}}

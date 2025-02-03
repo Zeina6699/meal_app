@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/Data/dummy_data.dart';
-import 'package:meal_app/Widgets/Custom_Text.dart';
+import 'package:meal_app/Model/Meal.dart';
 import 'package:meal_app/Widgets/Grid_View_Item.dart';
 
+
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+CategoriesScreen({super.key,required this.onToggleFavorite});
+      void Function(Meal meal)onToggleFavorite;
+
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,7 @@ class CategoriesScreen extends StatelessWidget {
         child: GridView.builder(
           itemCount: availableCategories.length,
           itemBuilder: (context,index){
-            return GridViewItem(category: availableCategories[index]);
+            return GridViewItem(category: availableCategories[index],onToggleFavorite:onToggleFavorite ,);
           },
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
            crossAxisCount:2,
